@@ -1,0 +1,1658 @@
+{
+  "routes": [
+    {
+      "id": "V1",
+      "steps": [
+        {
+          "id": "a",
+          "requires": [],
+          "resource": "装配"
+        },
+        {
+          "id": "b",
+          "requires": [
+            "a"
+          ],
+          "resource": "装配"
+        },
+        {
+          "id": "c",
+          "requires": [
+            "a"
+          ],
+          "resource": "电检"
+        },
+        {
+          "id": "d",
+          "requires": [
+            "b",
+            "c"
+          ],
+          "resource": "总检"
+        }
+      ]
+    },
+    {
+      "id": "V2",
+      "steps": [
+        {
+          "id": "a",
+          "requires": [],
+          "resource": "装配"
+        },
+        {
+          "id": "c",
+          "requires": [
+            "a"
+          ],
+          "resource": "电检"
+        },
+        {
+          "id": "d",
+          "requires": [
+            "c"
+          ],
+          "resource": "总检"
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "J1",
+      "route_id": "V1",
+      "family": "甲型",
+      "due": "2026-11-03T17:00:00+08:00",
+      "customer_confirmed": true
+    },
+    {
+      "id": "J2",
+      "route_id": "V1",
+      "family": "甲型",
+      "due": "2026-11-03T17:00:00+08:00",
+      "customer_confirmed": true
+    }
+  ],
+  "events": [
+    {
+      "id": "E1",
+      "job_id": "J1",
+      "step": "a",
+      "kind": "开始",
+      "occurred": "2026-11-01T08:00:00+08:00",
+      "known": "2026-11-01T08:00:00+08:00"
+    },
+    {
+      "id": "E2",
+      "job_id": "J1",
+      "step": "a",
+      "kind": "完成",
+      "occurred": "2026-11-01T10:00:00+08:00",
+      "known": "2026-11-01T10:00:00+08:00"
+    },
+    {
+      "id": "E3",
+      "job_id": "J1",
+      "step": "b",
+      "kind": "开始",
+      "occurred": "2026-11-01T11:00:00+08:00",
+      "known": "2026-11-02T08:00:00+08:00"
+    },
+    {
+      "id": "E4",
+      "job_id": "J1",
+      "step": "b",
+      "kind": "暂停",
+      "occurred": "2026-11-01T12:00:00+08:00",
+      "known": "2026-11-02T08:00:00+08:00",
+      "reason": "待料"
+    },
+    {
+      "id": "E5",
+      "job_id": "J1",
+      "step": "c",
+      "kind": "否决返工",
+      "occurred": "2026-11-02T09:00:00+08:00",
+      "known": "2026-11-02T09:00:00+08:00",
+      "return_to": "a"
+    }
+  ],
+  "history": [
+    {
+      "id": "H1",
+      "family": "甲型",
+      "route_id": "V1",
+      "start": "2026-09-02T08:00:00+08:00",
+      "duration_hours": 21,
+      "wait_material_hours": 1,
+      "wait_quality_hours": 1,
+      "known_at": "2026-10-01",
+      "parallel_steps": [
+        "b",
+        "c"
+      ]
+    },
+    {
+      "id": "H2",
+      "family": "甲型",
+      "route_id": "V1",
+      "start": "2026-09-03T08:00:00+08:00",
+      "duration_hours": 22,
+      "wait_material_hours": 2,
+      "wait_quality_hours": 2,
+      "known_at": "2026-10-01",
+      "parallel_steps": [
+        "b",
+        "c"
+      ]
+    },
+    {
+      "id": "H3",
+      "family": "甲型",
+      "route_id": "V1",
+      "start": "2026-09-04T08:00:00+08:00",
+      "duration_hours": 23,
+      "wait_material_hours": 0,
+      "wait_quality_hours": 3,
+      "known_at": "2026-10-01",
+      "parallel_steps": [
+        "b",
+        "c"
+      ]
+    },
+    {
+      "id": "H4",
+      "family": "甲型",
+      "route_id": "V1",
+      "start": "2026-09-05T08:00:00+08:00",
+      "duration_hours": 24,
+      "wait_material_hours": 1,
+      "wait_quality_hours": 0,
+      "known_at": "2026-10-01",
+      "parallel_steps": [
+        "b",
+        "c"
+      ]
+    },
+    {
+      "id": "H5",
+      "family": "甲型",
+      "route_id": "V1",
+      "start": "2026-09-06T08:00:00+08:00",
+      "duration_hours": 20,
+      "wait_material_hours": 2,
+      "wait_quality_hours": 1,
+      "known_at": "2026-10-01",
+      "parallel_steps": [
+        "b",
+        "c"
+      ]
+    },
+    {
+      "id": "H6",
+      "family": "甲型",
+      "route_id": "V1",
+      "start": "2026-09-07T08:00:00+08:00",
+      "duration_hours": 21,
+      "wait_material_hours": 0,
+      "wait_quality_hours": 2,
+      "known_at": "2026-10-01",
+      "parallel_steps": [
+        "b",
+        "c"
+      ]
+    },
+    {
+      "id": "H7",
+      "family": "甲型",
+      "route_id": "V1",
+      "start": "2026-09-08T08:00:00+08:00",
+      "duration_hours": 22,
+      "wait_material_hours": 1,
+      "wait_quality_hours": 3,
+      "known_at": "2026-10-01",
+      "parallel_steps": [
+        "b",
+        "c"
+      ]
+    },
+    {
+      "id": "H8",
+      "family": "甲型",
+      "route_id": "V1",
+      "start": "2026-09-09T08:00:00+08:00",
+      "duration_hours": 23,
+      "wait_material_hours": 2,
+      "wait_quality_hours": 0,
+      "known_at": "2026-10-01",
+      "parallel_steps": [
+        "b",
+        "c"
+      ]
+    },
+    {
+      "id": "H9",
+      "family": "甲型",
+      "route_id": "V1",
+      "start": "2026-09-10T08:00:00+08:00",
+      "duration_hours": 24,
+      "wait_material_hours": 0,
+      "wait_quality_hours": 1,
+      "known_at": "2026-10-01",
+      "parallel_steps": [
+        "b",
+        "c"
+      ]
+    },
+    {
+      "id": "H10",
+      "family": "甲型",
+      "route_id": "V1",
+      "start": "2026-09-11T08:00:00+08:00",
+      "duration_hours": 20,
+      "wait_material_hours": 1,
+      "wait_quality_hours": 2,
+      "known_at": "2026-10-01",
+      "parallel_steps": [
+        "b",
+        "c"
+      ]
+    },
+    {
+      "id": "H11",
+      "family": "甲型",
+      "route_id": "V1",
+      "start": "2026-09-12T08:00:00+08:00",
+      "duration_hours": 21,
+      "wait_material_hours": 2,
+      "wait_quality_hours": 3,
+      "known_at": "2026-10-01",
+      "parallel_steps": [
+        "b",
+        "c"
+      ]
+    },
+    {
+      "id": "H12",
+      "family": "甲型",
+      "route_id": "V1",
+      "start": "2026-09-13T08:00:00+08:00",
+      "duration_hours": 22,
+      "wait_material_hours": 0,
+      "wait_quality_hours": 0,
+      "known_at": "2026-10-01",
+      "parallel_steps": [
+        "b",
+        "c"
+      ]
+    },
+    {
+      "id": "H13",
+      "family": "甲型",
+      "route_id": "V1",
+      "start": "2026-09-14T08:00:00+08:00",
+      "duration_hours": 23,
+      "wait_material_hours": 1,
+      "wait_quality_hours": 1,
+      "known_at": "2026-10-01",
+      "parallel_steps": [
+        "b",
+        "c"
+      ]
+    },
+    {
+      "id": "H14",
+      "family": "甲型",
+      "route_id": "V1",
+      "start": "2026-09-15T08:00:00+08:00",
+      "duration_hours": 24,
+      "wait_material_hours": 2,
+      "wait_quality_hours": 2,
+      "known_at": "2026-10-01",
+      "parallel_steps": [
+        "b",
+        "c"
+      ]
+    },
+    {
+      "id": "H15",
+      "family": "甲型",
+      "route_id": "V1",
+      "start": "2026-09-16T08:00:00+08:00",
+      "duration_hours": 20,
+      "wait_material_hours": 0,
+      "wait_quality_hours": 3,
+      "known_at": "2026-10-01",
+      "parallel_steps": [
+        "b",
+        "c"
+      ]
+    },
+    {
+      "id": "H16",
+      "family": "甲型",
+      "route_id": "V1",
+      "start": "2026-09-17T08:00:00+08:00",
+      "duration_hours": 21,
+      "wait_material_hours": 1,
+      "wait_quality_hours": 0,
+      "known_at": "2026-10-01",
+      "parallel_steps": [
+        "b",
+        "c"
+      ]
+    }
+  ],
+  "supplies": [
+    {
+      "id": "M1",
+      "job_id": "J1",
+      "step": "b",
+      "expected": "2026-11-02T08:00:00+08:00",
+      "status": "取消",
+      "known": "2026-11-01T18:00:00+08:00"
+    }
+  ],
+  "windows": [
+    {
+      "id": "W1",
+      "resource": "总检",
+      "from": "2026-11-03T08:00:00+08:00",
+      "to": "2026-11-03T12:00:00+08:00",
+      "capacity": 1,
+      "reserved_job": "J2",
+      "dispatched": true
+    },
+    {
+      "id": "W2",
+      "resource": "总检",
+      "from": "2026-11-04T08:00:00+08:00",
+      "to": "2026-11-04T12:00:00+08:00",
+      "capacity": 1,
+      "reserved_job": null,
+      "dispatched": false
+    }
+  ],
+  "history_events": [
+    {
+      "id": "H1-a-开始",
+      "job_id": "H1",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "开始",
+      "occurred": "2026-09-02T08:00:00+08:00",
+      "known": "2026-09-02T08:05:00+08:00"
+    },
+    {
+      "id": "H1-a-完成",
+      "job_id": "H1",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "完成",
+      "occurred": "2026-09-02T10:00:00+08:00",
+      "known": "2026-09-02T10:05:00+08:00"
+    },
+    {
+      "id": "H1-b-开始",
+      "job_id": "H1",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "开始",
+      "occurred": "2026-09-02T10:00:00+08:00",
+      "known": "2026-09-02T10:05:00+08:00"
+    },
+    {
+      "id": "H1-b-完成",
+      "job_id": "H1",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "完成",
+      "occurred": "2026-09-02T16:00:00+08:00",
+      "known": "2026-09-02T16:05:00+08:00"
+    },
+    {
+      "id": "H1-c-开始",
+      "job_id": "H1",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "开始",
+      "occurred": "2026-09-02T10:00:00+08:00",
+      "known": "2026-09-02T10:05:00+08:00"
+    },
+    {
+      "id": "H1-c-完成",
+      "job_id": "H1",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "完成",
+      "occurred": "2026-09-02T15:00:00+08:00",
+      "known": "2026-09-02T15:05:00+08:00"
+    },
+    {
+      "id": "H1-d-开始",
+      "job_id": "H1",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "开始",
+      "occurred": "2026-09-02T18:00:00+08:00",
+      "known": "2026-09-02T18:05:00+08:00"
+    },
+    {
+      "id": "H1-d-完成",
+      "job_id": "H1",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "完成",
+      "occurred": "2026-09-02T21:00:00+08:00",
+      "known": "2026-09-02T21:05:00+08:00"
+    },
+    {
+      "id": "H2-a-开始",
+      "job_id": "H2",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "开始",
+      "occurred": "2026-09-03T08:00:00+08:00",
+      "known": "2026-09-03T08:05:00+08:00"
+    },
+    {
+      "id": "H2-a-完成",
+      "job_id": "H2",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "完成",
+      "occurred": "2026-09-03T10:00:00+08:00",
+      "known": "2026-09-03T10:05:00+08:00"
+    },
+    {
+      "id": "H2-b-开始",
+      "job_id": "H2",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "开始",
+      "occurred": "2026-09-03T10:00:00+08:00",
+      "known": "2026-09-03T10:05:00+08:00"
+    },
+    {
+      "id": "H2-b-完成",
+      "job_id": "H2",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "完成",
+      "occurred": "2026-09-03T17:00:00+08:00",
+      "known": "2026-09-03T17:05:00+08:00"
+    },
+    {
+      "id": "H2-c-开始",
+      "job_id": "H2",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "开始",
+      "occurred": "2026-09-03T10:00:00+08:00",
+      "known": "2026-09-03T10:05:00+08:00"
+    },
+    {
+      "id": "H2-c-完成",
+      "job_id": "H2",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "完成",
+      "occurred": "2026-09-03T16:00:00+08:00",
+      "known": "2026-09-03T16:05:00+08:00"
+    },
+    {
+      "id": "H2-d-开始",
+      "job_id": "H2",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "开始",
+      "occurred": "2026-09-03T18:00:00+08:00",
+      "known": "2026-09-03T18:05:00+08:00"
+    },
+    {
+      "id": "H2-d-完成",
+      "job_id": "H2",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "完成",
+      "occurred": "2026-09-03T22:00:00+08:00",
+      "known": "2026-09-03T22:05:00+08:00"
+    },
+    {
+      "id": "H3-a-开始",
+      "job_id": "H3",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "开始",
+      "occurred": "2026-09-04T08:00:00+08:00",
+      "known": "2026-09-04T08:05:00+08:00"
+    },
+    {
+      "id": "H3-a-完成",
+      "job_id": "H3",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "完成",
+      "occurred": "2026-09-04T10:00:00+08:00",
+      "known": "2026-09-04T10:05:00+08:00"
+    },
+    {
+      "id": "H3-b-开始",
+      "job_id": "H3",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "开始",
+      "occurred": "2026-09-04T10:00:00+08:00",
+      "known": "2026-09-04T10:05:00+08:00"
+    },
+    {
+      "id": "H3-b-完成",
+      "job_id": "H3",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "完成",
+      "occurred": "2026-09-04T15:00:00+08:00",
+      "known": "2026-09-04T15:05:00+08:00"
+    },
+    {
+      "id": "H3-c-开始",
+      "job_id": "H3",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "开始",
+      "occurred": "2026-09-04T10:00:00+08:00",
+      "known": "2026-09-04T10:05:00+08:00"
+    },
+    {
+      "id": "H3-c-完成",
+      "job_id": "H3",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "完成",
+      "occurred": "2026-09-04T17:00:00+08:00",
+      "known": "2026-09-04T17:05:00+08:00"
+    },
+    {
+      "id": "H3-d-开始",
+      "job_id": "H3",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "开始",
+      "occurred": "2026-09-04T18:00:00+08:00",
+      "known": "2026-09-04T18:05:00+08:00"
+    },
+    {
+      "id": "H3-d-完成",
+      "job_id": "H3",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "完成",
+      "occurred": "2026-09-04T20:00:00+08:00",
+      "known": "2026-09-04T20:05:00+08:00"
+    },
+    {
+      "id": "H4-a-开始",
+      "job_id": "H4",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "开始",
+      "occurred": "2026-09-05T08:00:00+08:00",
+      "known": "2026-09-05T08:05:00+08:00"
+    },
+    {
+      "id": "H4-a-完成",
+      "job_id": "H4",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "完成",
+      "occurred": "2026-09-05T10:00:00+08:00",
+      "known": "2026-09-05T10:05:00+08:00"
+    },
+    {
+      "id": "H4-b-开始",
+      "job_id": "H4",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "开始",
+      "occurred": "2026-09-05T10:00:00+08:00",
+      "known": "2026-09-05T10:05:00+08:00"
+    },
+    {
+      "id": "H4-b-完成",
+      "job_id": "H4",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "完成",
+      "occurred": "2026-09-05T16:00:00+08:00",
+      "known": "2026-09-05T16:05:00+08:00"
+    },
+    {
+      "id": "H4-c-开始",
+      "job_id": "H4",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "开始",
+      "occurred": "2026-09-05T10:00:00+08:00",
+      "known": "2026-09-05T10:05:00+08:00"
+    },
+    {
+      "id": "H4-c-完成",
+      "job_id": "H4",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "完成",
+      "occurred": "2026-09-05T14:00:00+08:00",
+      "known": "2026-09-05T14:05:00+08:00"
+    },
+    {
+      "id": "H4-d-开始",
+      "job_id": "H4",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "开始",
+      "occurred": "2026-09-05T18:00:00+08:00",
+      "known": "2026-09-05T18:05:00+08:00"
+    },
+    {
+      "id": "H4-d-完成",
+      "job_id": "H4",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "完成",
+      "occurred": "2026-09-05T21:00:00+08:00",
+      "known": "2026-09-05T21:05:00+08:00"
+    },
+    {
+      "id": "H5-a-开始",
+      "job_id": "H5",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "开始",
+      "occurred": "2026-09-06T08:00:00+08:00",
+      "known": "2026-09-06T08:05:00+08:00"
+    },
+    {
+      "id": "H5-a-完成",
+      "job_id": "H5",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "完成",
+      "occurred": "2026-09-06T10:00:00+08:00",
+      "known": "2026-09-06T10:05:00+08:00"
+    },
+    {
+      "id": "H5-b-开始",
+      "job_id": "H5",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "开始",
+      "occurred": "2026-09-06T10:00:00+08:00",
+      "known": "2026-09-06T10:05:00+08:00"
+    },
+    {
+      "id": "H5-b-完成",
+      "job_id": "H5",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "完成",
+      "occurred": "2026-09-06T17:00:00+08:00",
+      "known": "2026-09-06T17:05:00+08:00"
+    },
+    {
+      "id": "H5-c-开始",
+      "job_id": "H5",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "开始",
+      "occurred": "2026-09-06T10:00:00+08:00",
+      "known": "2026-09-06T10:05:00+08:00"
+    },
+    {
+      "id": "H5-c-完成",
+      "job_id": "H5",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "完成",
+      "occurred": "2026-09-06T15:00:00+08:00",
+      "known": "2026-09-06T15:05:00+08:00"
+    },
+    {
+      "id": "H5-d-开始",
+      "job_id": "H5",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "开始",
+      "occurred": "2026-09-06T18:00:00+08:00",
+      "known": "2026-09-06T18:05:00+08:00"
+    },
+    {
+      "id": "H5-d-完成",
+      "job_id": "H5",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "完成",
+      "occurred": "2026-09-06T22:00:00+08:00",
+      "known": "2026-09-06T22:05:00+08:00"
+    },
+    {
+      "id": "H6-a-开始",
+      "job_id": "H6",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "开始",
+      "occurred": "2026-09-07T08:00:00+08:00",
+      "known": "2026-09-07T08:05:00+08:00"
+    },
+    {
+      "id": "H6-a-完成",
+      "job_id": "H6",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "完成",
+      "occurred": "2026-09-07T10:00:00+08:00",
+      "known": "2026-09-07T10:05:00+08:00"
+    },
+    {
+      "id": "H6-b-开始",
+      "job_id": "H6",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "开始",
+      "occurred": "2026-09-07T10:00:00+08:00",
+      "known": "2026-09-07T10:05:00+08:00"
+    },
+    {
+      "id": "H6-b-完成",
+      "job_id": "H6",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "完成",
+      "occurred": "2026-09-07T15:00:00+08:00",
+      "known": "2026-09-07T15:05:00+08:00"
+    },
+    {
+      "id": "H6-c-开始",
+      "job_id": "H6",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "开始",
+      "occurred": "2026-09-07T10:00:00+08:00",
+      "known": "2026-09-07T10:05:00+08:00"
+    },
+    {
+      "id": "H6-c-完成",
+      "job_id": "H6",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "完成",
+      "occurred": "2026-09-07T16:00:00+08:00",
+      "known": "2026-09-07T16:05:00+08:00"
+    },
+    {
+      "id": "H6-d-开始",
+      "job_id": "H6",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "开始",
+      "occurred": "2026-09-07T18:00:00+08:00",
+      "known": "2026-09-07T18:05:00+08:00"
+    },
+    {
+      "id": "H6-d-完成",
+      "job_id": "H6",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "完成",
+      "occurred": "2026-09-07T20:00:00+08:00",
+      "known": "2026-09-07T20:05:00+08:00"
+    },
+    {
+      "id": "H7-a-开始",
+      "job_id": "H7",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "开始",
+      "occurred": "2026-09-08T08:00:00+08:00",
+      "known": "2026-09-08T08:05:00+08:00"
+    },
+    {
+      "id": "H7-a-完成",
+      "job_id": "H7",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "完成",
+      "occurred": "2026-09-08T10:00:00+08:00",
+      "known": "2026-09-08T10:05:00+08:00"
+    },
+    {
+      "id": "H7-b-开始",
+      "job_id": "H7",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "开始",
+      "occurred": "2026-09-08T10:00:00+08:00",
+      "known": "2026-09-08T10:05:00+08:00"
+    },
+    {
+      "id": "H7-b-完成",
+      "job_id": "H7",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "完成",
+      "occurred": "2026-09-08T16:00:00+08:00",
+      "known": "2026-09-08T16:05:00+08:00"
+    },
+    {
+      "id": "H7-c-开始",
+      "job_id": "H7",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "开始",
+      "occurred": "2026-09-08T10:00:00+08:00",
+      "known": "2026-09-08T10:05:00+08:00"
+    },
+    {
+      "id": "H7-c-完成",
+      "job_id": "H7",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "完成",
+      "occurred": "2026-09-08T17:00:00+08:00",
+      "known": "2026-09-08T17:05:00+08:00"
+    },
+    {
+      "id": "H7-d-开始",
+      "job_id": "H7",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "开始",
+      "occurred": "2026-09-08T18:00:00+08:00",
+      "known": "2026-09-08T18:05:00+08:00"
+    },
+    {
+      "id": "H7-d-完成",
+      "job_id": "H7",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "完成",
+      "occurred": "2026-09-08T21:00:00+08:00",
+      "known": "2026-09-08T21:05:00+08:00"
+    },
+    {
+      "id": "H8-a-开始",
+      "job_id": "H8",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "开始",
+      "occurred": "2026-09-09T08:00:00+08:00",
+      "known": "2026-09-09T08:05:00+08:00"
+    },
+    {
+      "id": "H8-a-完成",
+      "job_id": "H8",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "完成",
+      "occurred": "2026-09-09T10:00:00+08:00",
+      "known": "2026-09-09T10:05:00+08:00"
+    },
+    {
+      "id": "H8-b-开始",
+      "job_id": "H8",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "开始",
+      "occurred": "2026-09-09T10:00:00+08:00",
+      "known": "2026-09-09T10:05:00+08:00"
+    },
+    {
+      "id": "H8-b-完成",
+      "job_id": "H8",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "完成",
+      "occurred": "2026-09-09T17:00:00+08:00",
+      "known": "2026-09-09T17:05:00+08:00"
+    },
+    {
+      "id": "H8-c-开始",
+      "job_id": "H8",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "开始",
+      "occurred": "2026-09-09T10:00:00+08:00",
+      "known": "2026-09-09T10:05:00+08:00"
+    },
+    {
+      "id": "H8-c-完成",
+      "job_id": "H8",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "完成",
+      "occurred": "2026-09-09T14:00:00+08:00",
+      "known": "2026-09-09T14:05:00+08:00"
+    },
+    {
+      "id": "H8-d-开始",
+      "job_id": "H8",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "开始",
+      "occurred": "2026-09-09T18:00:00+08:00",
+      "known": "2026-09-09T18:05:00+08:00"
+    },
+    {
+      "id": "H8-d-完成",
+      "job_id": "H8",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "完成",
+      "occurred": "2026-09-09T22:00:00+08:00",
+      "known": "2026-09-09T22:05:00+08:00"
+    },
+    {
+      "id": "H9-a-开始",
+      "job_id": "H9",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "开始",
+      "occurred": "2026-09-10T08:00:00+08:00",
+      "known": "2026-09-10T08:05:00+08:00"
+    },
+    {
+      "id": "H9-a-完成",
+      "job_id": "H9",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "完成",
+      "occurred": "2026-09-10T10:00:00+08:00",
+      "known": "2026-09-10T10:05:00+08:00"
+    },
+    {
+      "id": "H9-b-开始",
+      "job_id": "H9",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "开始",
+      "occurred": "2026-09-10T10:00:00+08:00",
+      "known": "2026-09-10T10:05:00+08:00"
+    },
+    {
+      "id": "H9-b-完成",
+      "job_id": "H9",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "完成",
+      "occurred": "2026-09-10T15:00:00+08:00",
+      "known": "2026-09-10T15:05:00+08:00"
+    },
+    {
+      "id": "H9-c-开始",
+      "job_id": "H9",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "开始",
+      "occurred": "2026-09-10T10:00:00+08:00",
+      "known": "2026-09-10T10:05:00+08:00"
+    },
+    {
+      "id": "H9-c-完成",
+      "job_id": "H9",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "完成",
+      "occurred": "2026-09-10T15:00:00+08:00",
+      "known": "2026-09-10T15:05:00+08:00"
+    },
+    {
+      "id": "H9-d-开始",
+      "job_id": "H9",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "开始",
+      "occurred": "2026-09-10T18:00:00+08:00",
+      "known": "2026-09-10T18:05:00+08:00"
+    },
+    {
+      "id": "H9-d-完成",
+      "job_id": "H9",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "完成",
+      "occurred": "2026-09-10T20:00:00+08:00",
+      "known": "2026-09-10T20:05:00+08:00"
+    },
+    {
+      "id": "H10-a-开始",
+      "job_id": "H10",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "开始",
+      "occurred": "2026-09-11T08:00:00+08:00",
+      "known": "2026-09-11T08:05:00+08:00"
+    },
+    {
+      "id": "H10-a-完成",
+      "job_id": "H10",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "完成",
+      "occurred": "2026-09-11T10:00:00+08:00",
+      "known": "2026-09-11T10:05:00+08:00"
+    },
+    {
+      "id": "H10-b-开始",
+      "job_id": "H10",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "开始",
+      "occurred": "2026-09-11T10:00:00+08:00",
+      "known": "2026-09-11T10:05:00+08:00"
+    },
+    {
+      "id": "H10-b-完成",
+      "job_id": "H10",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "完成",
+      "occurred": "2026-09-11T16:00:00+08:00",
+      "known": "2026-09-11T16:05:00+08:00"
+    },
+    {
+      "id": "H10-c-开始",
+      "job_id": "H10",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "开始",
+      "occurred": "2026-09-11T10:00:00+08:00",
+      "known": "2026-09-11T10:05:00+08:00"
+    },
+    {
+      "id": "H10-c-完成",
+      "job_id": "H10",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "完成",
+      "occurred": "2026-09-11T16:00:00+08:00",
+      "known": "2026-09-11T16:05:00+08:00"
+    },
+    {
+      "id": "H10-d-开始",
+      "job_id": "H10",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "开始",
+      "occurred": "2026-09-11T18:00:00+08:00",
+      "known": "2026-09-11T18:05:00+08:00"
+    },
+    {
+      "id": "H10-d-完成",
+      "job_id": "H10",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "完成",
+      "occurred": "2026-09-11T21:00:00+08:00",
+      "known": "2026-09-11T21:05:00+08:00"
+    },
+    {
+      "id": "H11-a-开始",
+      "job_id": "H11",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "开始",
+      "occurred": "2026-09-12T08:00:00+08:00",
+      "known": "2026-09-12T08:05:00+08:00"
+    },
+    {
+      "id": "H11-a-完成",
+      "job_id": "H11",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "完成",
+      "occurred": "2026-09-12T10:00:00+08:00",
+      "known": "2026-09-12T10:05:00+08:00"
+    },
+    {
+      "id": "H11-b-开始",
+      "job_id": "H11",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "开始",
+      "occurred": "2026-09-12T10:00:00+08:00",
+      "known": "2026-09-12T10:05:00+08:00"
+    },
+    {
+      "id": "H11-b-完成",
+      "job_id": "H11",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "完成",
+      "occurred": "2026-09-12T17:00:00+08:00",
+      "known": "2026-09-12T17:05:00+08:00"
+    },
+    {
+      "id": "H11-c-开始",
+      "job_id": "H11",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "开始",
+      "occurred": "2026-09-12T10:00:00+08:00",
+      "known": "2026-09-12T10:05:00+08:00"
+    },
+    {
+      "id": "H11-c-完成",
+      "job_id": "H11",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "完成",
+      "occurred": "2026-09-12T17:00:00+08:00",
+      "known": "2026-09-12T17:05:00+08:00"
+    },
+    {
+      "id": "H11-d-开始",
+      "job_id": "H11",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "开始",
+      "occurred": "2026-09-12T18:00:00+08:00",
+      "known": "2026-09-12T18:05:00+08:00"
+    },
+    {
+      "id": "H11-d-完成",
+      "job_id": "H11",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "完成",
+      "occurred": "2026-09-12T22:00:00+08:00",
+      "known": "2026-09-12T22:05:00+08:00"
+    },
+    {
+      "id": "H12-a-开始",
+      "job_id": "H12",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "开始",
+      "occurred": "2026-09-13T08:00:00+08:00",
+      "known": "2026-09-13T08:05:00+08:00"
+    },
+    {
+      "id": "H12-a-完成",
+      "job_id": "H12",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "完成",
+      "occurred": "2026-09-13T10:00:00+08:00",
+      "known": "2026-09-13T10:05:00+08:00"
+    },
+    {
+      "id": "H12-b-开始",
+      "job_id": "H12",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "开始",
+      "occurred": "2026-09-13T10:00:00+08:00",
+      "known": "2026-09-13T10:05:00+08:00"
+    },
+    {
+      "id": "H12-b-完成",
+      "job_id": "H12",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "完成",
+      "occurred": "2026-09-13T15:00:00+08:00",
+      "known": "2026-09-13T15:05:00+08:00"
+    },
+    {
+      "id": "H12-c-开始",
+      "job_id": "H12",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "开始",
+      "occurred": "2026-09-13T10:00:00+08:00",
+      "known": "2026-09-13T10:05:00+08:00"
+    },
+    {
+      "id": "H12-c-完成",
+      "job_id": "H12",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "完成",
+      "occurred": "2026-09-13T14:00:00+08:00",
+      "known": "2026-09-13T14:05:00+08:00"
+    },
+    {
+      "id": "H12-d-开始",
+      "job_id": "H12",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "开始",
+      "occurred": "2026-09-13T18:00:00+08:00",
+      "known": "2026-09-13T18:05:00+08:00"
+    },
+    {
+      "id": "H12-d-完成",
+      "job_id": "H12",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "完成",
+      "occurred": "2026-09-13T20:00:00+08:00",
+      "known": "2026-09-13T20:05:00+08:00"
+    },
+    {
+      "id": "H13-a-开始",
+      "job_id": "H13",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "开始",
+      "occurred": "2026-09-14T08:00:00+08:00",
+      "known": "2026-09-14T08:05:00+08:00"
+    },
+    {
+      "id": "H13-a-完成",
+      "job_id": "H13",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "完成",
+      "occurred": "2026-09-14T10:00:00+08:00",
+      "known": "2026-09-14T10:05:00+08:00"
+    },
+    {
+      "id": "H13-b-开始",
+      "job_id": "H13",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "开始",
+      "occurred": "2026-09-14T10:00:00+08:00",
+      "known": "2026-09-14T10:05:00+08:00"
+    },
+    {
+      "id": "H13-b-完成",
+      "job_id": "H13",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "完成",
+      "occurred": "2026-09-14T16:00:00+08:00",
+      "known": "2026-09-14T16:05:00+08:00"
+    },
+    {
+      "id": "H13-c-开始",
+      "job_id": "H13",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "开始",
+      "occurred": "2026-09-14T10:00:00+08:00",
+      "known": "2026-09-14T10:05:00+08:00"
+    },
+    {
+      "id": "H13-c-完成",
+      "job_id": "H13",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "完成",
+      "occurred": "2026-09-14T15:00:00+08:00",
+      "known": "2026-09-14T15:05:00+08:00"
+    },
+    {
+      "id": "H13-d-开始",
+      "job_id": "H13",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "开始",
+      "occurred": "2026-09-14T18:00:00+08:00",
+      "known": "2026-09-14T18:05:00+08:00"
+    },
+    {
+      "id": "H13-d-完成",
+      "job_id": "H13",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "完成",
+      "occurred": "2026-09-14T21:00:00+08:00",
+      "known": "2026-09-14T21:05:00+08:00"
+    },
+    {
+      "id": "H14-a-开始",
+      "job_id": "H14",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "开始",
+      "occurred": "2026-09-15T08:00:00+08:00",
+      "known": "2026-09-15T08:05:00+08:00"
+    },
+    {
+      "id": "H14-a-完成",
+      "job_id": "H14",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "完成",
+      "occurred": "2026-09-15T10:00:00+08:00",
+      "known": "2026-09-15T10:05:00+08:00"
+    },
+    {
+      "id": "H14-b-开始",
+      "job_id": "H14",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "开始",
+      "occurred": "2026-09-15T10:00:00+08:00",
+      "known": "2026-09-15T10:05:00+08:00"
+    },
+    {
+      "id": "H14-b-完成",
+      "job_id": "H14",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "完成",
+      "occurred": "2026-09-15T17:00:00+08:00",
+      "known": "2026-09-15T17:05:00+08:00"
+    },
+    {
+      "id": "H14-c-开始",
+      "job_id": "H14",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "开始",
+      "occurred": "2026-09-15T10:00:00+08:00",
+      "known": "2026-09-15T10:05:00+08:00"
+    },
+    {
+      "id": "H14-c-完成",
+      "job_id": "H14",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "完成",
+      "occurred": "2026-09-15T16:00:00+08:00",
+      "known": "2026-09-15T16:05:00+08:00"
+    },
+    {
+      "id": "H14-d-开始",
+      "job_id": "H14",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "开始",
+      "occurred": "2026-09-15T18:00:00+08:00",
+      "known": "2026-09-15T18:05:00+08:00"
+    },
+    {
+      "id": "H14-d-完成",
+      "job_id": "H14",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "完成",
+      "occurred": "2026-09-15T22:00:00+08:00",
+      "known": "2026-09-15T22:05:00+08:00"
+    },
+    {
+      "id": "H15-a-开始",
+      "job_id": "H15",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "开始",
+      "occurred": "2026-09-16T08:00:00+08:00",
+      "known": "2026-09-16T08:05:00+08:00"
+    },
+    {
+      "id": "H15-a-完成",
+      "job_id": "H15",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "完成",
+      "occurred": "2026-09-16T10:00:00+08:00",
+      "known": "2026-09-16T10:05:00+08:00"
+    },
+    {
+      "id": "H15-b-开始",
+      "job_id": "H15",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "开始",
+      "occurred": "2026-09-16T10:00:00+08:00",
+      "known": "2026-09-16T10:05:00+08:00"
+    },
+    {
+      "id": "H15-b-完成",
+      "job_id": "H15",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "完成",
+      "occurred": "2026-09-16T15:00:00+08:00",
+      "known": "2026-09-16T15:05:00+08:00"
+    },
+    {
+      "id": "H15-c-开始",
+      "job_id": "H15",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "开始",
+      "occurred": "2026-09-16T10:00:00+08:00",
+      "known": "2026-09-16T10:05:00+08:00"
+    },
+    {
+      "id": "H15-c-完成",
+      "job_id": "H15",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "完成",
+      "occurred": "2026-09-16T17:00:00+08:00",
+      "known": "2026-09-16T17:05:00+08:00"
+    },
+    {
+      "id": "H15-d-开始",
+      "job_id": "H15",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "开始",
+      "occurred": "2026-09-16T18:00:00+08:00",
+      "known": "2026-09-16T18:05:00+08:00"
+    },
+    {
+      "id": "H15-d-完成",
+      "job_id": "H15",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "完成",
+      "occurred": "2026-09-16T20:00:00+08:00",
+      "known": "2026-09-16T20:05:00+08:00"
+    },
+    {
+      "id": "H16-a-开始",
+      "job_id": "H16",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "开始",
+      "occurred": "2026-09-17T08:00:00+08:00",
+      "known": "2026-09-17T08:05:00+08:00"
+    },
+    {
+      "id": "H16-a-完成",
+      "job_id": "H16",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "a",
+      "kind": "完成",
+      "occurred": "2026-09-17T10:00:00+08:00",
+      "known": "2026-09-17T10:05:00+08:00"
+    },
+    {
+      "id": "H16-b-开始",
+      "job_id": "H16",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "开始",
+      "occurred": "2026-09-17T10:00:00+08:00",
+      "known": "2026-09-17T10:05:00+08:00"
+    },
+    {
+      "id": "H16-b-完成",
+      "job_id": "H16",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "b",
+      "kind": "完成",
+      "occurred": "2026-09-17T16:00:00+08:00",
+      "known": "2026-09-17T16:05:00+08:00"
+    },
+    {
+      "id": "H16-c-开始",
+      "job_id": "H16",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "开始",
+      "occurred": "2026-09-17T10:00:00+08:00",
+      "known": "2026-09-17T10:05:00+08:00"
+    },
+    {
+      "id": "H16-c-完成",
+      "job_id": "H16",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "c",
+      "kind": "完成",
+      "occurred": "2026-09-17T14:00:00+08:00",
+      "known": "2026-09-17T14:05:00+08:00"
+    },
+    {
+      "id": "H16-d-开始",
+      "job_id": "H16",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "开始",
+      "occurred": "2026-09-17T18:00:00+08:00",
+      "known": "2026-09-17T18:05:00+08:00"
+    },
+    {
+      "id": "H16-d-完成",
+      "job_id": "H16",
+      "route_id": "V1",
+      "family": "甲型",
+      "step": "d",
+      "kind": "完成",
+      "occurred": "2026-09-17T21:00:00+08:00",
+      "known": "2026-09-17T21:05:00+08:00"
+    }
+  ]
+}

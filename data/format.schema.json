@@ -1,0 +1,431 @@
+{
+  "type": [
+    "object"
+  ],
+  "properties": {
+    "events": {
+      "type": [
+        "array"
+      ],
+      "items": {
+        "type": [
+          "object"
+        ],
+        "properties": {
+          "id": {
+            "type": [
+              "string"
+            ]
+          },
+          "job_id": {
+            "type": [
+              "string"
+            ]
+          },
+          "kind": {
+            "type": [
+              "string"
+            ]
+          },
+          "known": {
+            "type": [
+              "string"
+            ]
+          },
+          "occurred": {
+            "type": [
+              "string"
+            ]
+          },
+          "reason": {
+            "type": [
+              "string"
+            ]
+          },
+          "return_to": {
+            "type": [
+              "string"
+            ]
+          },
+          "step": {
+            "type": [
+              "string"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "job_id",
+          "kind",
+          "known",
+          "occurred",
+          "step"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "history": {
+      "type": [
+        "array"
+      ],
+      "items": {
+        "type": [
+          "object"
+        ],
+        "properties": {
+          "duration_hours": {
+            "type": [
+              "number"
+            ]
+          },
+          "family": {
+            "type": [
+              "string"
+            ]
+          },
+          "id": {
+            "type": [
+              "string"
+            ]
+          },
+          "known_at": {
+            "type": [
+              "string"
+            ]
+          },
+          "parallel_steps": {
+            "type": [
+              "array"
+            ],
+            "items": {
+              "type": [
+                "string"
+              ]
+            }
+          },
+          "route_id": {
+            "type": [
+              "string"
+            ]
+          },
+          "start": {
+            "type": [
+              "string"
+            ]
+          },
+          "wait_material_hours": {
+            "type": [
+              "number"
+            ]
+          },
+          "wait_quality_hours": {
+            "type": [
+              "number"
+            ]
+          }
+        },
+        "required": [
+          "duration_hours",
+          "family",
+          "id",
+          "known_at",
+          "parallel_steps",
+          "route_id",
+          "start",
+          "wait_material_hours",
+          "wait_quality_hours"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "history_events": {
+      "type": [
+        "array"
+      ],
+      "items": {
+        "type": [
+          "object"
+        ],
+        "properties": {
+          "family": {
+            "type": [
+              "string"
+            ]
+          },
+          "id": {
+            "type": [
+              "string"
+            ]
+          },
+          "job_id": {
+            "type": [
+              "string"
+            ]
+          },
+          "kind": {
+            "type": [
+              "string"
+            ]
+          },
+          "known": {
+            "type": [
+              "string"
+            ]
+          },
+          "occurred": {
+            "type": [
+              "string"
+            ]
+          },
+          "route_id": {
+            "type": [
+              "string"
+            ]
+          },
+          "step": {
+            "type": [
+              "string"
+            ]
+          }
+        },
+        "required": [
+          "family",
+          "id",
+          "job_id",
+          "kind",
+          "known",
+          "occurred",
+          "route_id",
+          "step"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "jobs": {
+      "type": [
+        "array"
+      ],
+      "items": {
+        "type": [
+          "object"
+        ],
+        "properties": {
+          "customer_confirmed": {
+            "type": [
+              "boolean"
+            ]
+          },
+          "due": {
+            "type": [
+              "string"
+            ]
+          },
+          "family": {
+            "type": [
+              "string"
+            ]
+          },
+          "id": {
+            "type": [
+              "string"
+            ]
+          },
+          "route_id": {
+            "type": [
+              "string"
+            ]
+          }
+        },
+        "required": [
+          "customer_confirmed",
+          "due",
+          "family",
+          "id",
+          "route_id"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "routes": {
+      "type": [
+        "array"
+      ],
+      "items": {
+        "type": [
+          "object"
+        ],
+        "properties": {
+          "id": {
+            "type": [
+              "string"
+            ]
+          },
+          "steps": {
+            "type": [
+              "array"
+            ],
+            "items": {
+              "type": [
+                "object"
+              ],
+              "properties": {
+                "id": {
+                  "type": [
+                    "string"
+                  ]
+                },
+                "requires": {
+                  "type": [
+                    "array"
+                  ],
+                  "items": {
+                    "type": [
+                      "string"
+                    ]
+                  }
+                },
+                "resource": {
+                  "type": [
+                    "string"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "requires",
+                "resource"
+              ],
+              "additionalProperties": true
+            }
+          }
+        },
+        "required": [
+          "id",
+          "steps"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "supplies": {
+      "type": [
+        "array"
+      ],
+      "items": {
+        "type": [
+          "object"
+        ],
+        "properties": {
+          "expected": {
+            "type": [
+              "string"
+            ]
+          },
+          "id": {
+            "type": [
+              "string"
+            ]
+          },
+          "job_id": {
+            "type": [
+              "string"
+            ]
+          },
+          "known": {
+            "type": [
+              "string"
+            ]
+          },
+          "status": {
+            "type": [
+              "string"
+            ]
+          },
+          "step": {
+            "type": [
+              "string"
+            ]
+          }
+        },
+        "required": [
+          "expected",
+          "id",
+          "job_id",
+          "known",
+          "status",
+          "step"
+        ],
+        "additionalProperties": true
+      }
+    },
+    "windows": {
+      "type": [
+        "array"
+      ],
+      "items": {
+        "type": [
+          "object"
+        ],
+        "properties": {
+          "capacity": {
+            "type": [
+              "number"
+            ]
+          },
+          "dispatched": {
+            "type": [
+              "boolean"
+            ]
+          },
+          "from": {
+            "type": [
+              "string"
+            ]
+          },
+          "id": {
+            "type": [
+              "string"
+            ]
+          },
+          "reserved_job": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "resource": {
+            "type": [
+              "string"
+            ]
+          },
+          "to": {
+            "type": [
+              "string"
+            ]
+          }
+        },
+        "required": [
+          "capacity",
+          "dispatched",
+          "from",
+          "id",
+          "reserved_job",
+          "resource",
+          "to"
+        ],
+        "additionalProperties": true
+      }
+    }
+  },
+  "required": [
+    "events",
+    "history",
+    "history_events",
+    "jobs",
+    "routes",
+    "supplies",
+    "windows"
+  ],
+  "additionalProperties": true,
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "总装过程挖掘的等待归因与进度承诺合成资料格式"
+}
